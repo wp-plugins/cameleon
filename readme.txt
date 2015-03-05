@@ -31,6 +31,14 @@ REQUIRES PRETTY LINKS TO BE TURNED ON
 Try flushing the permalinks (visit settings > permalinks ). This is typically the problem.
 
 
+== Screenshots ==
+
+1. Skins custom post type.
+2. Adding a new skin.
+3. Site with current active theme.
+4. Site with custom loaded theme via url.
+
+
 == Changelog ==
 
 = 1.6 =
