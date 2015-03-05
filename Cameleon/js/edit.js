@@ -1,12 +1,14 @@
 jQuery(document).ready(function($) {
 
-	$template_class = ".cmln-alias-template";
-	$alias_class = ".cmln-generated-aliases";
-	$field_class = ".cmln-alias-field";
-	$add_class = ".cmln-add-alias";
-	$remove_class = ".cmln-remove-alias";
-	$wrap_class = ".cmln-alias-field-wrap";
+	// VARS
+	$template_class 	= ".cmln-alias-template";
+	$alias_class 		= ".cmln-generated-aliases";
+	$field_class 		= ".cmln-alias-field";
+	$add_class 			= ".cmln-add-alias";
+	$remove_class 		= ".cmln-remove-alias";
+	$wrap_class 		= ".cmln-alias-field-wrap";
 
+	// CREATE TEMPLATE
 	function $create_template($value) {
 		$template = $($template_class).html();
 		$count = $($field_class).size();
@@ -18,6 +20,7 @@ jQuery(document).ready(function($) {
 		$($alias_class + " " + $field_class).last().attr("id",$id + "_" + $count);
 	}
 
+	// VALIDATES THE ALIASES BEING ENTERED
 	function $validate_fields() {
 		var sel = ".cmln-desc";
 		$(sel).html("Validating...");
@@ -63,12 +66,21 @@ jQuery(document).ready(function($) {
 		});
 	}
 	
+	// BINDS
 	$("body").delegate($remove_class, "click", function() {
 		$(this).parent($wrap_class).remove();
 		$validate_fields()
 	});
 
-	$($add_class).on("click",function() { $create_template(''); });
-	$("body").delegate($field_class, "keydown", function() { $("#publish").attr("disabled","disabled"); });
-	$("body").delegate($field_class, "change", function() {	 $validate_fields()	});
+	$($add_class).on("click",function() { 
+		$create_template(''); 
+	});
+
+	$("body").delegate($field_class, "keydown", function() { 
+		$("#publish").attr("disabled","disabled"); 
+	});
+
+	$("body").delegate($field_class, "change", function() {	 
+		$validate_fields()	
+	});
 });
