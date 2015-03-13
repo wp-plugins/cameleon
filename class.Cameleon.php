@@ -450,7 +450,7 @@ final class Cameleon {
 		// create output array
 		$ret = array(
 			'status' 	=> 202
-		,	'message' 	=> $this->settings['alias_warning']
+		,	'message' 	=> ''
 		,	'errors' 	=> array()
 		);
 
